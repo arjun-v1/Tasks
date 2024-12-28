@@ -15,8 +15,6 @@ def get_url():
         "https://collegedunia.com/web-api/listing?data=eyJ1cmwiOiJpbmRpYS1jb2xsZWdlcyIsInBhZ2UiOjUsInZpZXciOiJ0YWJsZSIsImhhc190ZXh0X3JhbmtpbmciOmZhbHNlfQ==",
         "https://collegedunia.com/web-api/listing?data=eyJ1cmwiOiJpbmRpYS1jb2xsZWdlcyIsInBhZ2UiOjYsInZpZXciOiJ0YWJsZSIsImhhc190ZXh0X3JhbmtpbmciOmZhbHNlfQ=="
     ]
-    # for url in urls:
-    #     yield url
     return urls
 
 
@@ -43,19 +41,9 @@ def get_colleges():
 
 st.title('College Information App')
 if st.button('Get colleges'):
-    # st.write('Fetching data...')
-
-    # colleges = get_colleges()
-    # no_colleges = int(sys.argv[1])
-    # while no_colleges:
-    #     st.write(f"{no_colleges}", colleges.__next__())
-    #     no_colleges = no_colleges - 1
-    
     no_colleges = int(sys.argv[1])
     for i, college in enumerate(get_colleges()):
         st.write(f"{i+1}", college)
         if i+1 == no_colleges:
             break
-        
-
 
